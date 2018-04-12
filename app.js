@@ -1,6 +1,6 @@
 //Variables
 
-const MLB_STATS_URL = "https://api.mysportsfeeds.com/v1.1/pull/mlb/2018-regular/cumulative_player_stats.json?";
+const MLB_STATS_URL = "https://api.mysportsfeeds.com/v1.2/pull/mlb/2018-regular/cumulative_player_stats.json?";
 
 
 //Landing Page
@@ -17,70 +17,59 @@ function letsGoButtonClicked() {
 function submitButtonClicked() {
 	$('.submitButton').on('click', event => {
 		event.preventDefault();
-		//API Call function
-		//Display result function
+		getMLBData();
+		displayResults();
 	});
 }
 
 function displayTools() {
 	$('.startText').remove();
-	buildStatsPage();
+	renderStatsPage();
 	submitButtonClicked();
 }
 
-function buildStatsPage() {
-	//display the search form and results box
-	$('main').html(`
-		<section role="region">
-			<div class="input box">
-				<form>
-					<fieldset>
-						<legend>Enter your Parameters</legend>
+function displayResults() {
+	$('.results').removeAttr('hidden')
+	console.log(getMLBData);
+}
 
-						<select name="position">
-							<option value="C">Catcher</option>
-							<option value="1B">First Base</option>
-							<option value="2B">Second Base</option>
-							<option value="3B">Third Base</option>
-							<option value="SS">Shortstop</option>
-							<option value="OF">Outfielder</option>
-							<option value="P">Pitcher</option>
-						 </select>
-						<br>
-						<select name="hitting_stats">
-							<option value="R">Runs</option>
-							<option value="RBI">RBI</option>
-							<option value="HR">Home Runs</option>
-							<option value="SB">Steals</option>
-							<option value="AVG">Average</option>
-						</select>
-						<br>
-						<select name="pitching_stats">
-							<option value="W">Wins</option>
-							<option value="ERA">ERA</option>
-							<option value="SV">Saves</option>
-							<option value="WHIP">WHIP</option>
-							<option value="SO">Strikeouts</option>
-						</select>
-						<br>
-						<button type="submit" class="submitButton">Submit</button>
-					</fieldset>
-				</form>
-			</div>
-			<div class="results box" hidden><p>This is the results box<p></div>
-		</section>`);
+function displayError() {
+	console.log('Something went wrong');
+}
+
+function renderStatsPage() {
+	//display the search form and results box
+	$('#inputOutput').removeAttr('hidden');
 }
 
 //API Calls
 
-let settings = {
-	url: MLB_STATS_URL,
-	Authorization: Basic c3BhcnRhbmluZGM6RnRCMDUyMDAy,
-	
-};
 
 function getMLBData() {
-	$.getJSON(settings);
+	
+	let chosenStats = $('#pit').val(); 
+		if ($('#pos').val() != 'P') {
+			chosenStats = $('#hit').val();
+			}
+					
+	let settings = {
+	type: 'GET',
+	headers: {
+		"Authorization": 'Basic ' + 'btoa(c3BhcnRhbmluZGM6RnRCMDUyMDAy)'
+		},
+	url: MLB_STATS_URL,
+	data: {
+		position: $('#pos').val(),
+		playerstats: chosenStats,
+		limit: 20,
+		sort: stats.chosenStats.D,
+		},
+	crossDomain: true,
+	success: displayResults(),
+	error: displayError(),
+	};
+		
+	$.ajax(settings);
 }
 
 //Run the page

@@ -24,6 +24,47 @@
 				<p>Are you doing your research for next year's fantasy league? Is your fantasy baseball team lagging in the standings?  Are you one (or two, or three) players away from winning the Championship? Well look no further, the Fantasy Baseball Player Lookup will give you give you a list of the best players for each stat category you care about.</p>
 				<button class="startButton">Let's Begin!</button>
 			</div>
+			
+			<section id='inputOutput' role="region" hidden>
+			<div class="input box">
+				<form>
+					<fieldset>
+						<legend>Enter your Parameters</legend>
+            			<p>Position</p>
+						<select id="pos" name="position">
+							<option value="C">Catcher</option>
+							<option value="1B">First Base</option>
+							<option value="2B">Second Base</option>
+							<option value="3B">Third Base</option>
+							<option value="SS">Shortstop</option>
+							<option value="OF">Outfielder</option>
+							<option value="P">Pitcher</option>
+						 </select>
+						<br>
+						<p>Hitting Stats</p>
+						<select id="hit" name="hitting_stats">
+							<option value="R">Runs</option>
+							<option value="RBI">RBI</option>
+							<option value="HR">Home Runs</option>
+							<option value="SB">Steals</option>
+							<option value="AVG">Average</option>
+						</select>
+						<br>
+						<p>Pitching Stats</p>
+						<select id="pit" name="pitching_stats">
+							<option value="W">Wins</option>
+							<option value="ERA">ERA</option>
+							<option value="SV">Saves</option>
+							<option value="WHIP">WHIP</option>
+							<option value="SO">Strikeouts</option>
+						</select>
+						<br><br>
+						<button type="submit" class="submitButton">Submit</button>
+					</fieldset>
+				</form>
+			</div>
+			<div class="results box" hidden><p>This is the results box<p></div>
+		</section>
 		</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
