@@ -9,3 +9,9 @@ body {
 select {
   display: block;
 }
+
+.result {
+	
+	display: inline-block;
+	margin-top: 20px;
+}

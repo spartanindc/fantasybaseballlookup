@@ -18,7 +18,6 @@ function submitButtonClicked() {
 	$('.submitButton').on('click', event => {
 		event.preventDefault();
 		getMLBData();
-		displayResults();
 	});
 }
 
@@ -28,12 +27,12 @@ function displayTools() {
 	submitButtonClicked();
 }
 
-function displayResults() {
-	$('.results').removeAttr('hidden')
-	console.log(getMLBData);
+function displayResults(data) {
+	$('.results').removeAttr('hidden');
+	console.log(data);
 }
 
-function displayError() {
+function displayError(data) {
 	console.log('Something went wrong');
 }
 
@@ -50,23 +49,24 @@ function getMLBData() {
 	let chosenStats = $('#pit').val(); 
 		if ($('#pos').val() != 'P') {
 			chosenStats = $('#hit').val();
-			}
+		}
 					
 	let settings = {
 	type: 'GET',
 	headers: {
-		"Authorization": 'Basic ' + 'btoa(c3BhcnRhbmluZGM6RnRCMDUyMDAy)'
+		"Authorization": 'Basic c3BhcnRhbmluZGM6RnRCMDUyMDAy'
 		},
 	url: MLB_STATS_URL,
+	dataType: 'json',
 	data: {
 		position: $('#pos').val(),
 		playerstats: chosenStats,
 		limit: 20,
-		sort: stats.chosenStats.D,
+		sort: "stats." + chosenStats + ".D",
 		},
 	crossDomain: true,
-	success: displayResults(),
-	error: displayError(),
+	success: displayResults,
+	error: displayError,
 	};
 		
 	$.ajax(settings);
