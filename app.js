@@ -2,6 +2,17 @@
 
 const MLB_STATS_URL = "https://api.mysportsfeeds.com/v1.2/pull/mlb/2018-regular/cumulative_player_stats.json?";
 
+const statTrans = new Map([["R", "Runs"],
+                          ["RBI", "RunsBattedIn"],
+                          ["HR", "Homeruns"],
+						  ["SB", "StolenBases"],
+						  ["AVG", "BattingAvg"],
+						  ["ERA", "EarnedRunsAllowed"],
+						  ["W", "Wins"],
+						  ["SV", "Saves"],
+						  ["WHIP", "WalksandHitsPerInningPitched"],
+						  ["SO", "PitcherStrikeouts"]]);
+
 //Landing Page
 
 function letsGoButtonClicked() {
@@ -15,7 +26,14 @@ function letsGoButtonClicked() {
 
 function resetResults() {
 	$('.results').html(`
-	<ul class='resultsList'>Results</ul>`)
+		<h2>Results</h2>	
+		<table id='resultTable'>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Stat</th>
+				</tr>
+			</table>`)
 }
 
 function submitButtonClicked() {
@@ -35,45 +53,24 @@ function displayTools() {
 
 function displayResults(data) {
 	
-	let chosenStats = $('#pit').val(); 
+	let statAbbr = $('#pit').val(); 
 		if ($('#pos').val() != 'P') {
-			chosenStats = $('#hit').val();
-		};
-	
-	let pickedStat = ''
-		if (chosenStats === "R") {
-			pickedStat = "Runs"
-		} else if (chosenStats == "RBI") {
-			pickedStat = "RunsBattedIn"
-		} else if (chosenStats === "HR") {
-			pickedStat = "HomeRuns"
-		} else if (chosenStats === "SB") {
-			pickedStat = "StolenBases"
-		} else if (chosenStats === "AVG") {
-			pickedStat = "BattingAvg"
-		} else if (chosenStats === "ERA") {
-			pickedStat = "EarnedRunsAllowed"
-		} else if (chosenStats === "W") {
-			pickedStat = "Wins"
-		} else if (chosenStats === "SV") {
-			pickedStat = "Saves"
-		} else if (chosenStats === "WHIP") {
-			pickedStat = "WalksAndHitsPerInningPitched"
-		} else {
-			pickedStat = "PitcherStrikeouts"
-		};
-	
-	let players = data.cumulativeplayerstats.playerstatsentry;
-
-	let resultsString = "";
-	
-	for (i = 0; i < players.length; i++) {
-		resultsString += "<li>" + players[i].player.FirstName + " " + players[i].player.LastName + " has " + players[i].stats.pickedStat["#text"] + " " + chosenStats + " so far this year</li>";
+			statAbbr = $('#hit').val();
 		}
+	let statName = statTrans.get(statAbbr);
+	let players = data.cumulativeplayerstats.playerstatsentry;
+	let tableResults = "";
 	
-	$('.results').append(resultsString);
-	console.log(data);
+	for (i=0; i < players.length; i++) {
+		player = players[i].player;
+		tableResults += "<tr>" +
+						"<th>" + player.FirstName + "</th>" +
+						"<th>" + player.LastName + "</th>" +
+						"<th>" + players[i].stats[statName]["#text"] + " " + statAbbr + "</th>" +
+						"</tr>";
+	}
 	
+	$('#resultTable').append(tableResults);
 }
 
 function displayError(data) {
@@ -90,9 +87,9 @@ function renderStatsPage() {
 
 function getMLBData() {
 	
-	let chosenStats = $('#pit').val(); 
+	let statAbbr = $('#pit').val(); 
 		if ($('#pos').val() != 'P') {
-			chosenStats = $('#hit').val();
+			statAbbr = $('#hit').val();
 		};
 	
 	let settings = {
@@ -104,9 +101,9 @@ function getMLBData() {
 	dataType: 'json',
 	data: {
 		position: $('#pos').val(),
-		playerstats: chosenStats,
+		playerstats: statAbbr,
 		limit: 20,
-		sort: "stats." + chosenStats + ".D",
+		sort: "stats." + statAbbr + ".D",
 		},
 	crossDomain: true,
 	success: displayResults,

@@ -1,17 +1,9 @@
-body {
+main {
   box-sizing: border-box;
-}
+} 
 
-.box {
-	border: 2px solid black;
-}
-
-select {
-  display: block;
-}
-
-.result {
-	
-	display: inline-block;
-	margin-top: 20px;
+table, th, td, tr {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
 }
