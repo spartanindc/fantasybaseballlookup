@@ -29,8 +29,7 @@ function resetResults() {
 		<h2>Results</h2>	
 		<table id='resultTable'>
 				<tr>
-					<th>First Name</th>
-					<th>Last Name</th>
+					<th>Name</th>
 					<th>Stat</th>
 				</tr>
 			</table>`)
@@ -64,9 +63,8 @@ function displayResults(data) {
 	for (i=0; i < players.length; i++) {
 		player = players[i].player;
 		tableResults += "<tr>" +
-						"<th>" + player.FirstName + "</th>" +
-						"<th>" + player.LastName + "</th>" +
-						"<th>" + players[i].stats[statName]["#text"] + " " + statAbbr + "</th>" +
+						"<td>" + player.FirstName + " " + player.LastName + "</td>" +
+						"<td>" + players[i].stats[statName]["#text"] + " " + statAbbr + "</td>" +
 						"</tr>";
 	}
 	
