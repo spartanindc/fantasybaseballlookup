@@ -46,19 +46,21 @@ function submitButtonClicked() {
 		resetResults();
 		getMLBData();	
 		$('.results').show();
-		dynamicForm();
 	});
 }
 
 function dynamicForm() {
 	$('#hittingSelect').hide();
 	$('#pitchingSelect').hide();
-	if ($('#pos').val() === 'P') {
-		$('#pitchingSelect').show();
-	} else {
+	$('#pos').on('change', event => {
+		if ($('#pos').val() === 'P') {
+			$('#pitchingSelect').show();
+			$('#hittingSelect').hide();
+		} else if ($('#pos').val() != 'P') {
 		$('#hittingSelect').show();
-	}
-	
+		$('#pitchingSelect').hide();
+		}
+	});
 }
 
 function displayTools() {
