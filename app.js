@@ -21,6 +21,7 @@ function letsGoButtonClicked() {
 	$('.startButton').on('click', event => {
 		event.preventDefault();
 		displayTools();
+		dynamicForm();
 		
 	});
 }
@@ -45,7 +46,19 @@ function submitButtonClicked() {
 		resetResults();
 		getMLBData();	
 		$('.results').show();
+		dynamicForm();
 	});
+}
+
+function dynamicForm() {
+	$('#hittingSelect').hide();
+	$('#pitchingSelect').hide();
+	if ($('#pos').val() === 'P') {
+		$('#pitchingSelect').show();
+	} else {
+		$('#hittingSelect').show();
+	}
+	
 }
 
 function displayTools() {
