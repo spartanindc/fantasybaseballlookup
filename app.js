@@ -19,6 +19,7 @@ function letsGoButtonClicked() {
 	$('.startButton').on('click', event => {
 		event.preventDefault();
 		displayTools();
+		
 	});
 }
 
@@ -41,6 +42,7 @@ function submitButtonClicked() {
 		$('.results').removeAttr('hidden');
 		resetResults();
 		getMLBData();	
+		$('.results').show();
 	});
 }
 
@@ -76,18 +78,31 @@ function displayError(data) {
 }
 
 function renderStatsPage() {
-	//display the search form and results box
+	//display the search form, hide the results box until submit button clicked
 	$('#inputOutput').removeAttr('hidden');
+	$('.results').hide();
 }
 
-//API Calls
-
+//API Call
 
 function getMLBData() {
 	
 	let statAbbr = $('#pit').val(); 
 		if ($('#pos').val() != 'P') {
 			statAbbr = $('#hit').val();
+		};
+	
+	let sortDecider = ""
+		if ($('#pos').val() == 'P' && $('#pit').val() == 'ERA' || $('#pos').val() == 'P' && $('#pit').val() == 'WHIP') {
+			sortDecider = ".A"
+			} else {
+				sortDecider = ".D"};
+	
+	let playerPosition = ""
+		if ($('#pos').val() == 'OF') {
+			playerPosition = 'OF,LF,CF,RF'
+		} else {
+			playerPosition = $('#pos').val()
 		};
 	
 	let settings = {
@@ -98,10 +113,10 @@ function getMLBData() {
 	url: MLB_STATS_URL,
 	dataType: 'json',
 	data: {
-		position: $('#pos').val(),
+		position: playerPosition,
 		playerstats: statAbbr,
 		limit: 20,
-		sort: "stats." + statAbbr + ".D",
+		sort: "stats." + statAbbr + sortDecider,
 		},
 	crossDomain: true,
 	success: displayResults,

@@ -1,6 +1,20 @@
-main {
+body {
+	background: #61b4d8;
+	color: #262b2d;
+}
+
+main, header {
   box-sizing: border-box;
 } 
+
+h1 {
+	text-align: center;
+	font-family: 'Cabin Sketch', cursive;
+	font-size: 38px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
 
 table, th, td, tr {
 	border: 1px solid black;
@@ -8,3 +22,47 @@ table, th, td, tr {
 	padding: 5px;
 }
 
+.teamLogos {
+	font-family: 'bbclub-font', sans-serif;
+	font-size: 32px;
+	text-align: center;
+	border-top: 3px solid #262b2d;
+	border-bottom: 3px solid #262b2d;
+	max-height: 50px
+}
+
+.plogo {
+	height: 32px;
+	margin: 0px auto;
+}
+
+#lead, #second, #third, #close {
+	text-align: center;
+	font-family: 'Pontano Sans';
+	font-size: 20px;
+}
+
+.startButton {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	font-family: 'Cabin Sketch';
+	font-weight: bold
+}
+
+#inputOutput {
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	
+}
+
+.box {
+	display: inline-block;
+}
+
+.results {
+	display: none;
+}
