@@ -23,6 +23,7 @@ table, th, td, tr {
 }
 
 .teamLogos {
+	@font-face: 'bbclub-font', sans-serif;
 	font-family: 'bbclub-font', sans-serif;
 	font-size: 32px;
 	text-align: center;
