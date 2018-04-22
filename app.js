@@ -13,6 +13,8 @@ const statTrans = new Map([["R", "Runs"],
 						  ["WHIP", "WalksandHitsPerInningPitched"],
 						  ["SO", "PitcherStrikeouts"]]);
 
+
+
 //Landing Page
 
 function letsGoButtonClicked() {
@@ -61,16 +63,25 @@ function displayResults(data) {
 	let statName = statTrans.get(statAbbr);
 	let players = data.cumulativeplayerstats.playerstatsentry;
 	let tableResults = "";
-	
+
+	let statTag = ""
+		if (statAbbr == "SO") {
+			statTag = "K"
+		} else {
+			statTag = statAbbr
+		}
+			
+	console.log(data);
 	for (i=0; i < players.length; i++) {
 		player = players[i].player;
 		tableResults += "<tr>" +
 						"<td>" + player.FirstName + " " + player.LastName + "</td>" +
-						"<td>" + players[i].stats[statName]["#text"] + " " + statAbbr + "</td>" +
+						"<td>" + players[i].stats[statName]["#text"] + " " + statTag + "</td>" +
 						"</tr>";
 	}
 	
 	$('#resultTable').append(tableResults);
+	console.log(data);
 }
 
 function displayError(data) {
@@ -105,6 +116,13 @@ function getMLBData() {
 			playerPosition = $('#pos').val()
 		};
 	
+	let sortSettings = ""
+		if (statAbbr == "SO") {
+			sortSettings = "stats.Pitching-SO.D"
+		} else {
+			sortSettings = "stats." + statAbbr + sortDecider
+		}
+	
 	let settings = {
 	type: 'GET',
 	headers: {
@@ -116,7 +134,7 @@ function getMLBData() {
 		position: playerPosition,
 		playerstats: statAbbr,
 		limit: 20,
-		sort: "stats." + statAbbr + sortDecider,
+		sort: sortSettings,
 		},
 	crossDomain: true,
 	success: displayResults,
