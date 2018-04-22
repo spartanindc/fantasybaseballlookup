@@ -11,7 +11,7 @@
 		
 		<!--Fonts-->
 		<link rel="stylesheet" href="https://daigofuji.github.io/bbclub-font/css/bbclub-font.css">
-		<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Pontano+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Pontano+Sans|Carme" rel="stylesheet">
 		
 		
 		<title>Fantasy Baseball Player Lookup</title>
@@ -20,7 +20,7 @@
 	<body>
 		<header role="banner">
 			<h1>Fantasy Baseball Player Lookup</h1>
-			<div class="teamLogos"><p class="plogo">ABCDEFGHIJKLMNOPQRSTUVWXYZabcd</p></div>
+			<div class="teamLogos"><p class="plogo">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d</p></div>
 		</header>
 		<main role="main">
 			<div class="startText">
@@ -28,7 +28,7 @@
 				<p id="second">Is your fantasy baseball team lagging in the standings?</p>  
 				<p id="third">Are you one (or two, or three) players away from winning the Championship?</p> 
 				<p id="close">Well look no further! The <em><strong>Fantasy Baseball Player Lookup</strong></em> will give you give you the hookup of the best players for each stat category you care about.</p>
-				<button class="startButton">Let's Begin!</button>
+				<button class="startButton">Let's Play Ball!</button>
 			</div>
 			
 			<section class="col-8" id='inputOutput' role="region" hidden>
@@ -39,7 +39,7 @@
 					<form>
 						<fieldset>
 							<legend>Enter your Parameters</legend>
-							<p>Position</p>
+							<p>Position:</p>
 							<select id="pos" name="position">
 								<option value="C">Catcher</option>
 								<option value="1B">First Base</option>
@@ -50,7 +50,7 @@
 								<option value="P">Pitcher</option>
 							 </select>
 							<br>
-							<p>Hitting Stats</p>
+							<p>Hitting Stats:</p>
 							<select id="hit" name="hitting_stats">
 								<option value="R">Runs</option>
 								<option value="RBI">RBI</option>
@@ -59,7 +59,7 @@
 								<option value="AVG">Average</option>
 							</select>
 							<br>
-							<p>Pitching Stats</p>
+							<p>Pitching Stats:</p>
 							<select id="pit" name="pitching_stats">
 								<option value="W">Wins</option>
 								<option value="ERA">ERA</option>
