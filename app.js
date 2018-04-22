@@ -13,16 +13,13 @@ const statTrans = new Map([["R", "Runs"],
 						  ["WHIP", "WalksandHitsPerInningPitched"],
 						  ["SO", "PitcherStrikeouts"]]);
 
-
-
 //Landing Page
 
 function letsGoButtonClicked() {
 	$('.startButton').on('click', event => {
 		event.preventDefault();
 		displayTools();
-		dynamicForm();
-		
+		dynamicForm();	
 	});
 }
 
@@ -99,9 +96,7 @@ function displayResults(data) {
 	console.log(data);
 }
 
-function displayError(data) {
-	console.log('Something went wrong');
-}
+
 
 function renderStatsPage() {
 	//display the search form, hide the results box until submit button clicked
@@ -157,6 +152,10 @@ function getMLBData() {
 	};
 		
 	$.ajax(settings);
+}
+
+function displayError(data) {
+	console.log('Something went wrong');
 }
 
 //Run the page
