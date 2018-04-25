@@ -7,10 +7,10 @@ const statTrans = new Map([["R", "Runs"],
                           ["HR", "Homeruns"],
 						  ["SB", "StolenBases"],
 						  ["AVG", "BattingAvg"],
-						  ["ERA", "EarnedRunsAllowed"],
+						  ["ERA", "EarnedRunAvg"],
 						  ["W", "Wins"],
 						  ["SV", "Saves"],
-						  ["WHIP", "WalksandHitsPerInningPitched"],
+						  ["WHIP", "WalksAndHitsPerInningPitched"],
 						  ["SO", "PitcherStrikeouts"]]);
 
 //Landing Page
