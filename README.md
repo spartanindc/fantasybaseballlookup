@@ -1,8 +1,18 @@
-# fantasybaseballlookup
-API Hack Project using MLB stats
+# Fantast Baseball Stats Lookup
 
-A Work in Progress:
+## Link to App
+[spartanindc.github.io/fantasybaseballlookup](spartanindc.github.io/fantasybaseballlookup)
 
-I. User Flows: https://github.com/spartanindc/fantasybaseballlookup/blob/master/Fantasy%20Baseball%20Player%20User%20flows.docx
+![FBSL Landing Page](https://github.com/spartanindc/fantasybaseballlookup/blob/master/FBSL_landing.png)
+![FBSL Results Page](https://github.com/spartanindc/fantasybaseballlookup/blob/master/FBSL_results.png)
 
-II. Wireframing - https://wireframe.cc/AKJFd4
+## Summary
+
+The Fantasy Baseball Stats Lookup app, pulls stats important to fantasy baseball players, allowing them to quickly find the best players for their chosen stat at each position.  The user selects the position they want to find stats for, and depending on the choice, hitting or pitching stat options are displayed to chose from.  The user then submits the search and results are given in a table.
+
+## Technology used
+
+* Javascript
+* HTML
+* CSS
+* Jquery
