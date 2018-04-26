@@ -1,13 +1,14 @@
-body {
-	background: rgb(34,195,55);
-	background: linear-gradient(0deg, rgba(34,195,55,1) 30%, rgba(44,210,230,1) 100%);
-	background-size: cover;
-}
-
-main, header {
+* {
   box-sizing: border-box;
 } 
 
+body {
+	background: linear-gradient(to bottom,#4fe6f9,#4ee061) fixed;
+}
+
+main {
+	height: 2000px;
+}
 h1 {
 	text-align: center;
 	font-family: 'Cabin Sketch', cursive;
@@ -137,15 +138,13 @@ td {
 	text-align: center;
 }
 
-.box {
-	display: inline-block;
+.wrapper {
 	margin-left: auto;
 	margin-right: auto;
-	vertical-align: center;
 }
 
-.input {
-	margin-top: 10px;
+.box {
+	width: 50%;
 }
 
 .resultsIntro {
@@ -156,3 +155,4 @@ h2 {
 	font-size: 20px;
 	margin: 0 auto;
 }
+

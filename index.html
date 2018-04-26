@@ -35,54 +35,56 @@
 				<div class="resultsIntro box col-12">
 					<p>Pick the position you're looking for, and the stat you're looking for the current leaders in.</p>
 				</div>
-				<div class="input box col-4">
-					<form>
-						<fieldset>
-							<legend>Enter your Parameters</legend>
-							<p>Position:</p>
-							<select id="pos" name="position" required>
-								<option value="" selected disabled>Pick a position</option>
-								<option value="C">Catcher</option>
-								<option value="1B">First Base</option>
-								<option value="2B">Second Base</option>
-								<option value="3B">Third Base</option>
-								<option value="SS">Shortstop</option>
-								<option value="OF">Outfielder</option>
-								<option value="P">Pitcher</option>
-							 </select>
-							<br>
-							<div id="hittingSelect">
-								<p>Hitting Stats:</p>
-								<select id="hit" name="hitting_stats">
-									<option value="R">Runs</option>
-									<option value="RBI">RBI</option>
-									<option value="HR">Home Runs</option>
-									<option value="SB">Steals</option>
-									<option value="AVG">Average</option>
-								</select>
-							</div>
-							<br>
-							<div id="pitchingSelect">
-								<p>Pitching Stats:</p>
-								<select id="pit" name="pitching_stats">
-									<option value="W">Wins</option>
-									<option value="ERA">ERA</option>
-									<option value="SV">Saves</option>
-									<option value="WHIP">WHIP</option>
-									<option value="SO">Strikeouts</option>
-								</select>
-							</div>
-							<br><br>
-							<button type="submit" class="submitButton">Submit</button>
-						</fieldset>
-					</form>
+				<div class="wrapper col-12">
+					<div class="input box col-6">
+						<form>
+							<fieldset>
+								<legend>Enter your Parameters</legend>
+								<p>Position:</p>
+								<select id="pos" name="position" required>
+									<option value="" selected disabled>Pick a position</option>
+									<option value="C">Catcher</option>
+									<option value="1B">First Base</option>
+									<option value="2B">Second Base</option>
+									<option value="3B">Third Base</option>
+									<option value="SS">Shortstop</option>
+									<option value="OF">Outfielder</option>
+									<option value="P">Pitcher</option>
+								 </select>
+								<br>
+								<div id="hittingSelect">
+									<p>Hitting Stats:</p>
+									<select id="hit" name="hitting_stats">
+										<option value="R">Runs</option>
+										<option value="RBI">RBI</option>
+										<option value="HR">Home Runs</option>
+										<option value="SB">Steals</option>
+										<option value="AVG">Average</option>
+									</select>
+								</div>
+								<br>
+								<div id="pitchingSelect">
+									<p>Pitching Stats:</p>
+									<select id="pit" name="pitching_stats">
+										<option value="W">Wins</option>
+										<option value="ERA">ERA</option>
+										<option value="SV">Saves</option>
+										<option value="WHIP">WHIP</option>
+										<option value="SO">Strikeouts</option>
+									</select>
+								</div>
+								<br><br>
+								<button type="submit" class="submitButton">Submit</button>
+							</fieldset>
+						</form>
+					</div>
+					<div class="results box col-6" hidden>
+						<h2>Search Results</h2>
+						<table id='resultTable'>
+						</table>
+					</div>
 				</div>
-				<div class="results box col-6" style="overflow-x:auto;" hidden>
-					<h2>Search Results</h2>
-					<table id='resultTable'>
-					</table>
-				</div>
-		</section>
+			</section>
 		</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>

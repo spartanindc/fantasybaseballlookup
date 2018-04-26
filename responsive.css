@@ -1,18 +1,18 @@
-.header {
-  width: 100%;
+.inputOutput {
+  width: 800px;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
 }
 
 /* Clearfix */
-header::before,
-header::after {
+.inputOutput::before,
+.inputOutput::after {
   display: table;
   content: '';
 }
 
-header::after {
+.inputOutput::after {
   clear: both;
 }
 
