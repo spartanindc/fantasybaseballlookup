@@ -74,16 +74,9 @@ function displayResults(data) {
 		}
 	let statName = statTrans.get(statAbbr);
 	let players = data.cumulativeplayerstats.playerstatsentry;
+	
 	let tableResults = "";
-
-	let statTag = ""
-		if (statAbbr == "SO") {
-			statTag = "K"
-		} else {
-			statTag = statAbbr
-		}
 			
-	console.log(data);
 	for (i=0; i < players.length; i++) {
 		player = players[i].player;
 		tableResults += "<tr>" +
@@ -92,14 +85,17 @@ function displayResults(data) {
 						"</tr>";
 	}
 	
+	let statTag = ""
+		if (statAbbr == "SO") {
+			statTag = "K"
+		} else {
+			statTag = statAbbr
+		}
+	
 	$('#resultTable').append(tableResults);
-	console.log(data);
 }
 
-
-
 function renderStatsPage() {
-	//display the search form, hide the results box until submit button clicked
 	$('#inputOutput').removeAttr('hidden');
 	$('.results').hide();
 }
