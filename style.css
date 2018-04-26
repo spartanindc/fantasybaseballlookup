@@ -1,6 +1,6 @@
 body {
-	background: #26e051;
-	color: #262b2d;
+	background: rgb(34,195,55);
+	background: linear-gradient(0deg, rgba(34,195,55,1) 30%, rgba(44,210,230,1) 100%);
 }
 
 main, header {
@@ -51,11 +51,11 @@ td, tr {
 }
 
 tbody tr:nth-child(odd) {
-  background: #9cfc97;
+  background: #4ee061;
 }
 
 tbody tr:nth-child(even) {
-  background: #E59C43;
+  background: #4fe6f9;
 }
 
 th {
