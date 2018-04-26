@@ -1,6 +1,7 @@
 body {
 	background: rgb(34,195,55);
 	background: linear-gradient(0deg, rgba(34,195,55,1) 30%, rgba(44,210,230,1) 100%);
+	background-size: cover;
 }
 
 main, header {
