@@ -1,4 +1,4 @@
-# Fantast Baseball Stats Lookup
+# Fantasy Baseball Stats Lookup
 
 ## Link to App
 [spartanindc.github.io/fantasybaseballlookup](spartanindc.github.io/fantasybaseballlookup)
