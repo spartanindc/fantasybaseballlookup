@@ -3,15 +3,15 @@
 const MLB_STATS_URL = "https://api.mysportsfeeds.com/v1.2/pull/mlb/2018-regular/cumulative_player_stats.json?";
 
 const statTrans = new Map([["R", "Runs"],
-                          ["RBI", "RunsBattedIn"],
-                          ["HR", "Homeruns"],
-						  ["SB", "StolenBases"],
-						  ["AVG", "BattingAvg"],
-						  ["ERA", "EarnedRunAvg"],
-						  ["W", "Wins"],
-						  ["SV", "Saves"],
-						  ["WHIP", "WalksAndHitsPerInningPitched"],
-						  ["SO", "PitcherStrikeouts"]]);
+                           ["RBI", "RunsBattedIn"],
+                           ["HR", "Homeruns"],
+                           ["SB", "StolenBases"],
+                           ["AVG", "BattingAvg"],
+                           ["ERA", "EarnedRunAvg"],
+                           ["W", "Wins"],
+                           ["SV", "Saves"],
+                           ["WHIP", "WalksAndHitsPerInningPitched"],
+                           ["SO", "PitcherStrikeouts"]]);
 
 //Landing Page
 
