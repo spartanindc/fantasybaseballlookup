@@ -64,13 +64,8 @@ function displayTools() {
 	$('.startText').remove();
 	renderStatsPage();
 	submitButtonClicked();
-/*
-	if ($('#pos').val() == '') {
-		$(.'submitButton').prop('disabled'))
-	} else {
-		$(.'submitButton').prop('disabled'))
-	}
-} */
+} 
+
 
 function displayResults(data) {
 	
