@@ -64,6 +64,12 @@ function displayTools() {
 	$('.startText').remove();
 	renderStatsPage();
 	submitButtonClicked();
+	
+	if ($('#pos').val() == '') {
+		$(.'submitButton').prop('disabled'))
+	} else {
+		$(.'submitButton').prop('disabled'))
+	}
 }
 
 function displayResults(data) {
@@ -75,6 +81,13 @@ function displayResults(data) {
 	let statName = statTrans.get(statAbbr);
 	let players = data.cumulativeplayerstats.playerstatsentry;
 	
+	let statTag = ""
+		if (statAbbr == "SO") {
+			statTag = "K"
+		} else {
+			statTag = statAbbr
+		}
+	
 	let tableResults = "";
 			
 	for (i=0; i < players.length; i++) {
@@ -84,13 +97,6 @@ function displayResults(data) {
 						"<td>" + players[i].stats[statName]["#text"] + " " + statTag + "</td>" +
 						"</tr>";
 	}
-	
-	let statTag = ""
-		if (statAbbr == "SO") {
-			statTag = "K"
-		} else {
-			statTag = statAbbr
-		}
 	
 	$('#resultTable').append(tableResults);
 }
