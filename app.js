@@ -64,13 +64,13 @@ function displayTools() {
 	$('.startText').remove();
 	renderStatsPage();
 	submitButtonClicked();
-	
+/*
 	if ($('#pos').val() == '') {
 		$(.'submitButton').prop('disabled'))
 	} else {
 		$(.'submitButton').prop('disabled'))
 	}
-}
+} */
 
 function displayResults(data) {
 	
@@ -87,6 +87,7 @@ function displayResults(data) {
 		} else {
 			statTag = statAbbr
 		}
+	
 	let tableResults = "";
 			
 	for (i=0; i < players.length; i++) {
