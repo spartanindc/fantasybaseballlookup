@@ -87,7 +87,6 @@ function displayResults(data) {
 		} else {
 			statTag = statAbbr
 		}
-	
 	let tableResults = "";
 			
 	for (i=0; i < players.length; i++) {
