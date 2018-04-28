@@ -11,9 +11,11 @@
 		
 		<!--Fonts-->
 		<link rel="stylesheet" href="https://daigofuji.github.io/bbclub-font/css/bbclub-font.css">
-		<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Pontano+Sans|Carme" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Carme" rel="stylesheet">
 		
-		
+        <!--FavIcon-->
+        <link href="https://raw.githubusercontent.com/spartanindc/fantasybaseballlookup/master/favicon.ico" rel="icon" type="image/x-icon" />
+        
 		<title>Fantasy Baseball Player Lookup</title>
 	</head>
 	
@@ -41,6 +43,7 @@
 							<fieldset>
 								<legend>Enter your Parameters</legend>
 								<p>Position:</p>
+                                <label for="pos" hidden>Position:</label>
 								<select id="pos" name="position" required>
 									<option value="" selected disabled>Pick a position</option>
 									<option value="C">Catcher</option>
@@ -54,6 +57,7 @@
 								<br>
 								<div id="hittingSelect">
 									<p>Hitting Stats:</p>
+                                    <label for="hit" hidden>Position:</label>
 									<select id="hit" name="hitting_stats">
 										<option value="R">Runs</option>
 										<option value="RBI">RBI</option>
@@ -65,6 +69,7 @@
 								<br>
 								<div id="pitchingSelect">
 									<p>Pitching Stats:</p>
+                                    <label for="pit" hidden>Position:</label>
 									<select id="pit" name="pitching_stats">
 										<option value="W">Wins</option>
 										<option value="ERA">ERA</option>
@@ -86,6 +91,13 @@
 				</div>
 			</section>
 		</main>
+        <footer role="contentinfo">
+            <div class="footer">
+                <p><strong>Thanks to:</strong></p>
+                <p><strong>API:</strong> <a href="https://www.mysportsfeeds.com">MySportsFeeds</a></p>
+                <p><strong>MLB Team Logo Font: </strong><a href="http://daigofuji.github.io/bbclub-font/">bbclub-font</a> by Daigo Fujiwara</p>
+            </div>
+        </footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	</body>

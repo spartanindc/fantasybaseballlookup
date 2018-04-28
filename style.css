@@ -4,6 +4,7 @@
 
 body {
 	background: linear-gradient(to bottom,#4fe6f9,#4ee061) fixed;
+    font-family: 'Carme';
 }
 
 main {
@@ -49,7 +50,7 @@ td, tr {
 	border: 1px solid black;
 	border-collapse: collapse;
 	padding: 5px;
-	font-family: 'Carme';
+	
 }
 
 tbody tr:nth-child(odd) {
@@ -84,7 +85,6 @@ td {
 
 #lead, #second, #third, #close {
 	text-align: center;
-	font-family: 'Carme';
 	font-size: 20px;
 }
 
@@ -129,7 +129,6 @@ td {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font-family: 'Carme';
 }
 
 #inputOutput > div > p {
@@ -148,8 +147,16 @@ td {
 	font-size: 22px;
 }
 
+.input {
+	margin-bottom: 30px;
+}
+
 h2 {
 	font-size: 20px;
 	margin: 0 auto;
 }
 
+.footer {
+    text-align: center;
+    margin: auto;
+}

@@ -28,7 +28,7 @@ function letsGoButtonClicked() {
 function resetResults() {
 	$('.results').html(`
 		<h2>Results</h2>	
-		<table id='resultTable' sortable>
+		<table id='resultTable'>
 				<tr>
 					<th>Name</th>
 					<th>Stat</th>
