@@ -33,7 +33,7 @@ function resetResults() {
 					<th>Name</th>
 					<th>Stat</th>
 				</tr>
-			</table>`)
+			</table>`);
 }
 
 function submitButtonClicked() {
@@ -76,11 +76,11 @@ function displayResults(data) {
 	let statName = statTrans.get(statAbbr);
 	let players = data.cumulativeplayerstats.playerstatsentry;
 	
-	let statTag = ""
+	let statTag = "";
 		if (statAbbr == "SO") {
-			statTag = "K"
+			statTag = "K";
 		} else {
-			statTag = statAbbr
+			statTag = statAbbr;
 		}
 	
 	let tableResults = "";
@@ -108,26 +108,27 @@ function getMLBData() {
 	let statAbbr = $('#pit').val(); 
 		if ($('#pos').val() != 'P') {
 			statAbbr = $('#hit').val();
-		};
+		}
 	
-	let sortDecider = ""
+	let sortDecider = "";
 		if ($('#pos').val() == 'P' && $('#pit').val() == 'ERA' || $('#pos').val() == 'P' && $('#pit').val() == 'WHIP') {
-			sortDecider = ".A"
+			sortDecider = ".A";
 			} else {
-				sortDecider = ".D"};
+				sortDecider = ".D";
+                }
 	
-	let playerPosition = ""
+	let playerPosition = "";
 		if ($('#pos').val() == 'OF') {
-			playerPosition = 'OF,LF,CF,RF'
+			playerPosition = 'OF,LF,CF,RF';
 		} else {
-			playerPosition = $('#pos').val()
-		};
+			playerPosition = $('#pos').val();
+		}
 	
-	let sortSettings = ""
+	let sortSettings = "";
 		if (statAbbr == "SO") {
-			sortSettings = "stats.Pitching-SO.D"
+			sortSettings = "stats.Pitching-SO.D";
 		} else {
-			sortSettings = "stats." + statAbbr + sortDecider
+			sortSettings = "stats." + statAbbr + sortDecider;
 		}
 	
 	let settings = {
