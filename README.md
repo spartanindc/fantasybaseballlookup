@@ -1,7 +1,7 @@
 # Fantasy Baseball Player Lookup
 
 ## Link to App
-[spartanindc.github.io/fantasybaseballlookup](spartanindc.github.io/fantasybaseballlookup)
+[spartanindc.github.io/fantasybaseballlookup](https://spartanindc.github.io/fantasybaseballlookup)
 
 ![FBSL Landing Page](https://github.com/spartanindc/fantasybaseballlookup/blob/master/FBSL_landing.png)
 ![FBSL Results Page](https://github.com/spartanindc/fantasybaseballlookup/blob/master/FBSL_results.png)
