@@ -1,56 +1,59 @@
 * {
   box-sizing: border-box;
-} 
+}
 
 body {
-	background: linear-gradient(to bottom,#4fe6f9,#4ee061) fixed;
-    font-family: 'Carme';
+  background: linear-gradient(to bottom, #4fe6f9, #4ee061) fixed;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 550;
 }
 
 main {
-	height: 2000px;
+  height: 2000px;
 }
 h1 {
-	text-align: center;
-	font-family: 'Cabin Sketch', cursive;
-	font-size: 38px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+  text-align: center;
+  font-family: "Cabin Sketch", cursive;
+  font-size: 38px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 div > form > fieldset > p {
-	border-bottom: 1px solid black;
-	font-weight: bold;
+  border-bottom: 1px solid black;
+  font-weight: bold;
 }
 
 div > form > fieldset > div > p {
-	border-bottom: 1px solid black;
-	font-weight: bold;
+  border-bottom: 1px solid black;
+  font-weight: bold;
 }
 
 table {
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 fieldset {
-	border: 2px solid black;
+  border: 2px solid black;
 }
 
 legend {
-	font-weight: bolder;
+  font-weight: bolder;
 }
 
-table, th, tc {
-	border-collapse: collapse;
-	border: 2px solid black
+table,
+th,
+tc {
+  border-collapse: collapse;
+  border: 2px solid black;
 }
 
-td, tr {
-	border: 1px solid black;
-	border-collapse: collapse;
-	padding: 5px;
-	
+td,
+tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
 }
 
 tbody tr:nth-child(odd) {
@@ -62,101 +65,114 @@ tbody tr:nth-child(even) {
 }
 
 th {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 td {
-	text-align: left;
+  text-align: left;
 }
 
 .teamLogos {
-	@font-face: 'bbclub-font', sans-serif;
-	font-family: 'bbclub-font', sans-serif;
-	font-size: 33px;
-	text-align: center;
-	border-top: 3px solid #262b2d;
-	border-bottom: 3px solid #262b2d;
+  @font-face: "bbclub-font", sans-serif;
+  font-family: "bbclub-font", sans-serif;
+  font-size: 33px;
+  text-align: center;
+  border-top: 3px solid #262b2d;
+  border-bottom: 3px solid #262b2d;
 }
 
 .plogo {
-	height: auto;
-	margin: 0px auto;
+  height: auto;
+  margin: 0px auto;
 }
 
-#lead, #second, #third, #close {
-	text-align: center;
-	font-size: 20px;
+.startText {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
 }
 
-.startButton, .submitButton {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-	cursor: pointer;
-	padding: 10px 20px;
-	overflow: hidden;
-	border: 1px solid black;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	font: normal normal bold 20px/normal "cabin-sketch", sans-serif;
-	color: #eaffea;
-	-o-text-overflow: clip;
-	text-overflow: clip;
-	background: url("https://github.com/spartanindc/fantasybaseballlookup/blob/master/funmozar-baseball-clipart.jpg?raw=true");
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	-webkit-background-origin: padding-box;
-	background-origin: padding-box;
-	-webkit-background-clip: border-box;
-	background-clip: border-box;
-	-webkit-background-size: cover;
-	background-size: cover;
-	-webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
-	box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
-	text-shadow: -2px -1px 0 black;
-	-webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
-	-moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
-	-o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
-	transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+#lead,
+#second,
+#third {
+  text-align: center;
+  font-size: 20px;
+}
+
+#close {
+  font-size: 20px;
+  text-align: justify;
+}
+
+.startButton,
+.submitButton {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 20px;
+  overflow: hidden;
+  border: 1px solid black;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: normal normal bold 20px / normal "cabin-sketch", sans-serif;
+  color: #eaffea;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: url("https://github.com/spartanindc/fantasybaseballlookup/blob/master/funmozar-baseball-clipart.jpg?raw=true");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
+  text-shadow: -2px -1px 0 black;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 #inputOutput {
-	margin-bottom: 50px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 #inputOutput > div > p {
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
 }
 
 .wrapper {
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
 .resultsIntro {
-	font-size: 22px;
+  font-size: 22px;
 }
 
 .input {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 h2 {
-	font-size: 20px;
-	margin: 0 auto;
+  font-size: 20px;
+  margin: 0 auto;
 }
 
 .footer {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
 }

@@ -1,106 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="description" content="Find a player to add to your fantasy baseball team">
-		
-		<!--Styles-->
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<link href="responsive.css" rel="stylesheet" type="text/css">
-		
-		<!--Fonts-->
-		<link rel="stylesheet" href="https://daigofuji.github.io/bbclub-font/css/bbclub-font.css">
-		<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Carme" rel="stylesheet">
-		
-        <!--FavIcon-->
-        <link href="https://raw.githubusercontent.com/spartanindc/fantasybaseballlookup/master/favicon.ico" rel="icon" type="image/x-icon" />
-        
-		<title>Fantasy Baseball Player Lookup</title>
-	</head>
-	
-	<body>
-		<header role="banner">
-			<h1>Fantasy Baseball Player Lookup</h1>
-			<div class="teamLogos"><p class="plogo">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d</p></div>
-		</header>
-		<main role="main">
-			<div class="startText">
-				<p id="lead">Are you doing your research for next year's fantasy league?</p>
-				<p id="second">Is your fantasy baseball team lagging in the standings?</p>  
-				<p id="third">Are you one (or two, or three) players away from winning the Championship?</p> 
-				<p id="close">Well look no further! The <em><strong>Fantasy Baseball Player Lookup</strong></em> will give you give you the hookup of the best players for each stat category you care about.</p>
-				<button class="startButton">Let's Play Ball!</button>
-			</div>
-			
-			<section class="col-12" id='inputOutput' role="region" hidden>
-				<div class="resultsIntro box col-12">
-					<p>Pick the position you're looking for, and the stat you're looking for the current leaders in.</p>
-				</div>
-				<div class="wrapper col-12">
-					<div class="input box col-6">
-						<form>
-							<fieldset>
-								<legend>Enter your Parameters</legend>
-								<p>Position:</p>
-                                <label for="pos" hidden>Position:</label>
-								<select id="pos" name="position" required>
-									<option value="" selected disabled>Pick a position</option>
-									<option value="C">Catcher</option>
-									<option value="1B">First Base</option>
-									<option value="2B">Second Base</option>
-									<option value="3B">Third Base</option>
-									<option value="SS">Shortstop</option>
-									<option value="OF">Outfielder</option>
-									<option value="P">Pitcher</option>
-								 </select>
-								<br>
-								<div id="hittingSelect">
-									<p>Hitting Stats:</p>
-                                    <label for="hit" hidden>Position:</label>
-									<select id="hit" name="hitting_stats">
-										<option value="R">Runs</option>
-										<option value="RBI">RBI</option>
-										<option value="HR">Home Runs</option>
-										<option value="SB">Steals</option>
-										<option value="AVG">Average</option>
-									</select>
-								</div>
-								<br>
-								<div id="pitchingSelect">
-									<p>Pitching Stats:</p>
-                                    <label for="pit" hidden>Position:</label>
-									<select id="pit" name="pitching_stats">
-										<option value="W">Wins</option>
-										<option value="ERA">ERA</option>
-										<option value="SV">Saves</option>
-										<option value="WHIP">WHIP</option>
-										<option value="SO">Strikeouts</option>
-									</select>
-								</div>
-								<br><br>
-								<button type="submit" class="submitButton">Submit</button>
-							</fieldset>
-						</form>
-					</div>
-					<div class="results box col-6" hidden>
-						<h2>Search Results</h2>
-						<table id='resultTable'>
-						</table>
-					</div>
-				</div>
-			</section>
-		</main>
-        <footer role="contentinfo">
-            <div class="footer">
-                <p><strong>Thanks to:</strong></p>
-                <p><strong>API:</strong> <a href="https://www.mysportsfeeds.com">MySportsFeeds</a></p>
-                <p><strong>MLB Team Logo Font: </strong><a href="http://daigofuji.github.io/bbclub-font/">bbclub-font</a> by Daigo Fujiwara</p>
-            </div>
-        </footer>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="app.js"></script>
-	</body>
-	
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Find a player to add to your fantasy baseball team"
+    />
 
+    <!-- Styles -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://daigofuji.github.io/bbclub-font/css/bbclub-font.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Fira+Sans"
+      rel="stylesheet"
+    />
+
+    <!-- FavIcon -->
+    <link
+      href="https://raw.githubusercontent.com/spartanindc/fantasybaseballlookup/master/favicon.ico"
+      rel="icon"
+      type="image/x-icon"
+    />
+
+    <title>Fantasy Baseball Player Lookup</title>
+  </head>
+
+  <body>
+    <header role="banner">
+      <h1>Fantasy Baseball Player Lookup</h1>
+      <div class="teamLogos">
+        <p class="plogo">
+          A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d
+        </p>
+      </div>
+    </header>
+    <main role="main">
+      <div class="startText">
+        <p id="lead">
+          Are you doing your research for next year's fantasy league?
+        </p>
+        <p id="second">
+          Is your fantasy baseball team lagging in the standings?
+        </p>
+        <p id="third">
+          Are you one (or two, or three) players away from winning the
+          Championship?
+        </p>
+        <p id="close">
+          Well look no further! The
+          <em><strong>Fantasy Baseball Player Lookup</strong></em> will give you
+          give you the hookup of the best players for each stat category you
+          care about. This app allows you to pick the position and stat category
+          you are interested in, and will return a list of the best 30 players
+          to help you figure out which player will be the difference in this
+          year's league.
+        </p>
+        <button class="startButton">Let's Play Ball!</button>
+      </div>
+
+      <section class="col-12" id="inputOutput" role="region" hidden>
+        <div class="resultsIntro box col-12">
+          <p>
+            Pick the position you're looking for, and the stat you're looking
+            for the current leaders in.
+          </p>
+        </div>
+        <div class="wrapper col-12">
+          <div class="input box col-6">
+            <form>
+              <fieldset>
+                <legend>Enter your Parameters</legend>
+                <p>Position:</p>
+                <label for="pos" hidden>Position:</label>
+                <select id="pos" name="position" required>
+                  <option value="" selected disabled>Pick a position</option>
+                  <option value="C">Catcher</option>
+                  <option value="1B">First Base</option>
+                  <option value="2B">Second Base</option>
+                  <option value="3B">Third Base</option>
+                  <option value="SS">Shortstop</option>
+                  <option value="OF">Outfielder</option>
+                  <option value="P">Pitcher</option>
+                </select>
+                <br />
+                <div id="hittingSelect">
+                  <p>Hitting Stats:</p>
+                  <label for="hit" hidden>Position:</label>
+                  <select id="hit" name="hitting_stats">
+                    <option value="R">Runs</option>
+                    <option value="RBI">RBI</option>
+                    <option value="HR">Home Runs</option>
+                    <option value="SB">Steals</option>
+                    <option value="AVG">Average</option>
+                  </select>
+                </div>
+                <br />
+                <div id="pitchingSelect">
+                  <p>Pitching Stats:</p>
+                  <label for="pit" hidden>Position:</label>
+                  <select id="pit" name="pitching_stats">
+                    <option value="W">Wins</option>
+                    <option value="ERA">ERA</option>
+                    <option value="SV">Saves</option>
+                    <option value="WHIP">WHIP</option>
+                    <option value="SO">Strikeouts</option>
+                  </select>
+                </div>
+                <br /><br />
+                <button type="submit" class="submitButton">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+          <div class="results box col-6" hidden>
+            <h2>Search Results</h2>
+            <table id="resultTable"></table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer role="contentinfo">
+      <div class="footer">
+        <p><strong>Thanks to:</strong></p>
+        <p>
+          <strong>API:</strong>
+          <a href="https://www.mysportsfeeds.com">MySportsFeeds</a>
+        </p>
+        <p>
+          <strong>MLB Team Logo Font: </strong
+          ><a href="http://daigofuji.github.io/bbclub-font/">bbclub-font</a> by
+          Daigo Fujiwara
+        </p>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
 </html>
