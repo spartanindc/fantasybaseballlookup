@@ -162,7 +162,6 @@ function getMLBData() {
       sort: sortSettings
     },
     crossDomain: true,
-    Access-Control-Allow-Origin: *,
     success: displayResults,
     error: displayError
   };
